@@ -32,3 +32,27 @@ You must take at least 1 match per turn
 You can't pass his turn
 You have 5 min to play before he loose the game.
 
+Sample
+-----------------
+
+TotalMatchNbr = 20
+while (TotalMatchNbr)
+SendMsgTo("Your turn to play, pick between 1 and 3 Match", Human)
+NbrMatchPick = ReceiveMsgFrom(Human)
+TotalMatchNbr = TotalMatchNbr - NbrMatchPick
+if (TotalMatchNbr == 1)
+{
+PlayerWin
+Quit
+}
+y = randomNumber() % 3 + 1
+if (y > 3)
+y--
+TotalMatchNbr = TotalMatchNbr - y
+if (TotalMatchNbr == 1)
+{
+ComputerWin
+Quit
+}
+
+
