@@ -1,4 +1,4 @@
-The Match Game
+The Matches Game
 ================
 
 
@@ -13,34 +13,34 @@ Each player play alternatively.
 Game world
 -----------------
 
-There is 20 match on the table.   
-All match are arranged in a line.   
-All match have the same shape.   
+There is 20 matches on the table.   
+All matches are arranged in a line.   
+All matches have the same shape.   
 
 Play goal
 -----------------
 
-The goal is to ensure that the opponent takes the last match.   
+The goal is to ensure that the opponent takes the last matches.   
 
 Game rules
 -----------------
 
 You can take between 1 and 3 matches each turn.   
-Taking the last match is a Game Over   
-If the opponent take the last match you Win the game   
-You must take at least 1 match per turn   
+Taking the last matches is a Game Over   
+If the opponent take the last matches you Win the game   
+You must take at least 1 matches per turn   
 You can't pass his turn   
 You have 5 min to play before he loose the game.   
 
 Sample
 -----------------
 
-TotalMatchNbr = 20   
-while (TotalMatchNbr)   
-SendMsgTo("Your turn to play, pick between 1 and 3 Match", Human)   
-NbrMatchPick = ReceiveMsgFrom(Human)      
-TotalMatchNbr = TotalMatchNbr - NbrMatchPick   
-if (TotalMatchNbr == 1)   
+TotalMatchesNbr = 20   
+while (TotalMatchesNbr)   
+SendMsgTo("Your turn to play, pick between 1 and 3 Matches", Human)   
+NbrMatchesPick = ReceiveMsgFrom(Human)      
+TotalMatchNbr = TotalMatchNbr - NbrMatchesPick   
+if (TotalMatchesNbr == 1)   
 {   
 PlayerWin   
 Quit   
@@ -48,11 +48,21 @@ Quit
 y = randomNumber() % 3 + 1   
 if (y > 3)   
 y--   
-TotalMatchNbr = TotalMatchNbr - y   
-if (TotalMatchNbr == 1)   
+TotalMatchesNbr = TotalMatchesNbr - y   
+if (TotalMatchesNbr == 1)   
 {
 ComputerWin   
 Quit   
 }   
 
 
+Sample
+
+While(true)
+X = randomNumber()
+SendMsgTo("Guess?", Human)
+Y = ReceiveMsgFrom(Human)
+if(X == Y)
+Score++;
+if (y ==Quit)
+Quit
